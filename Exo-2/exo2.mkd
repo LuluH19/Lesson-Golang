@@ -1,0 +1,67 @@
+New Device Setup
+Great work learning how to use the fmt package in Go! It is time to test your new knowledge on a larger problem!
+
+You just bought a new smart device and are ready to set it up! But you’ll be the one to program this setup and prompt the user for their information.
+
+If you get stuck during this project and would like to see a developer work through it, click “Get Unstuck“ to see a project walkthrough video.
+
+Tasks
+10/10 complete
+Mark the tasks as complete by checking them off
+Learning your Name
+1.
+The device needs to know how to address you.
+
+Begin the setup by declaring a string variable called name.
+
+2.
+With a variable in place, it is now time to prompt the user and save the input.
+
+Use the Println function to ask the user for their name.
+
+Next, use the Scan function to take in the input and save it using a reference to the name variable.
+
+3.
+Now that the name is saved, use it to address the user!
+
+Use the Println function to say hello with the name of the user.
+
+Learning the Age
+4.
+With the name all set, is time to take in the next bit of user information: their age!
+
+Create an int variable, for the user’s age.
+
+Then write a prompt using the Println function to ask the user for their age.
+
+5.
+Next, use the Scan function to take in the input and save it using a reference to the age variable.
+
+6.
+We can now print a message describing our user.
+
+Use the Printf to print the name and age of the user using the %s verb for the name, and the %d verb for the age.
+
+Reformat the Message
+7.
+Let’s practice using the Sprintf function to display the users information in a different way.
+
+Create a variable newMessage which holds the result of calling the Sprintf function.
+
+8.
+Inside the call to the Sprintf function, pass in the following information:
+
+An alternate message containing the user’s name and age.
+The name variable.
+The age variable.
+9.
+Use the Println function to print the newly created message.
+
+10.
+You completed the project! You were able to:
+
+Declare new variables.
+Take inputs and save them in these variables.
+Print the variables alongside unformatted text.
+Format some other variables when printing.
+Congratulations on mastering the fmt package!

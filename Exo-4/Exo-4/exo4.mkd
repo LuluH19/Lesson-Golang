@@ -1,0 +1,89 @@
+
+# Projet Go : Interstellar Travel Agency
+
+Tu vas créer une petite agence de voyage interstellaire en Go.
+L’objectif est d’apprendre à écrire et utiliser des **fonctions** pour calculer du carburant, gérer des destinations et simuler des voyages vers différentes planètes.
+
+---
+
+##  Objectifs pédagogiques
+
+* Déclarer et utiliser des fonctions en Go.
+* Passer des paramètres et renvoyer des valeurs.
+* Organiser son code pour coordonner plusieurs fonctions.
+* Simuler un scénario avec conditions et calculs.
+
+---
+
+##  Étapes à suivre
+
+### 1. Mesurer le carburant
+
+* Crée une fonction `fuelGauge(fuel int)` qui affiche le carburant restant avec `fmt.Println`.
+
+---
+
+### 2. Calculer le carburant nécessaire
+
+* Crée une fonction `calculateFuel(planet string) int`.
+* Déclare une variable `fuel` (int).
+* Selon la planète :
+
+  * `"Venus"` → 300000
+  * `"Mercury"` → 500000
+  * `"Mars"` → 700000
+  * Autre planète → 0
+* Retourne la valeur de `fuel`.
+
+---
+
+### 3. Messages
+
+* Crée une fonction `greetPlanet(planet string)` qui affiche un message de bienvenue à destination.
+* Crée une fonction `cantFly()` qui affiche :
+  `"We do not have the available fuel to fly there."`
+
+---
+
+### 4. Coordonner le vol
+
+* Crée une fonction `flyToPlanet(planet string, fuel int) int` qui :
+
+  1. Stocke le carburant restant (`fuelRemaining`) et calcule le coût (`fuelCost`).
+  2. Si `fuelRemaining >= fuelCost` :
+
+     * Affiche le message de bienvenue avec `greetPlanet`.
+     * Soustrait le coût du carburant.
+  3. Sinon :
+
+     * Affiche le message d’échec avec `cantFly`.
+  4. Retourne le carburant restant.
+
+---
+
+### 5. Simuler un voyage (dans `main`)
+
+1. Crée une variable `fuel` avec une valeur initiale de `1000000`.
+2. Crée une variable `planetChoice` avec la valeur `"Venus"`.
+3. Appelle `flyToPlanet(planetChoice, fuel)` et réaffecte le résultat à `fuel`.
+4. Appelle `fuelGauge(fuel)` pour afficher le carburant restant.
+
+---
+
+##  Résultat attendu
+
+Le programme doit :
+
+* calculer si le vaisseau a assez de carburant,
+* afficher le message de destination ou d’échec,
+* mettre à jour le carburant restant,
+* et l’afficher à la fin.
+
+---
+
+##  Bonus (facultatif)
+
+* Suivre l’état actuel de la planète où se trouve le vaisseau.
+* Ajouter une fonction pour rentrer à la maison.
+* Ajouter d’autres destinations et coûts en carburant.
+* Simuler plusieurs voyages d’affilée.

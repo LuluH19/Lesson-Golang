@@ -1,0 +1,70 @@
+# 🚨 Projet Go : Bank Heist
+
+Dans ce projet, tu vas utiliser les **structures conditionnelles** (`if`, `else`, `switch`) et le **module aléatoire** de Go pour simuler un braquage de banque.
+L’idée est de créer un petit scénario interactif avec plusieurs issues possibles, un peu comme dans un film de cambriolage.
+
+---
+
+## 🎯 Objectif
+
+Programmer un simulateur de braquage qui :
+
+* génère des événements aléatoires,
+* décide si le braquage réussit ou échoue,
+* affiche à l’écran chaque étape de l’action,
+* et calcule le butin si tout se passe bien.
+
+---
+
+## 📝 Étapes
+
+### 1. Initialisation
+
+* Ajoute le package `rand.Seed(time.Now().UnixNano())` pour que les nombres aléatoires changent à chaque exécution.
+* Crée une variable `isHeistOn` (booléenne) avec la valeur `true`.
+* Crée une variable `eludedGuards` avec un nombre aléatoire entre 0 et 99.
+
+---
+
+### 2. Premier test : Éviter les gardes
+
+* Si `eludedGuards >= 50`, alors tu as réussi à passer les gardes.
+* Sinon, le casse échoue immédiatement (`isHeistOn = false`).
+
+---
+
+### 3. Deuxième test : Ouvrir le coffre
+
+* Génère une variable `openedVault` avec `rand.Intn(100)`.
+* Si `isHeistOn` est toujours vrai **et** `openedVault >= 70`, alors le coffre s’ouvre.
+* Sinon (si `isHeistOn` est vrai mais `openedVault < 70`), alors tu échoues et `isHeistOn = false`.
+
+---
+
+### 4. Troisième test : Quitter la banque
+
+* Génère une variable `leftSafely` avec `rand.Intn(5)` (cinq scénarios possibles).
+* Si `isHeistOn` est toujours vrai, fais un `switch` sur `leftSafely` :
+
+  * Dans 4 cas sur 5 (par ex. valeurs 0, 1, 2, 3), le casse échoue → `isHeistOn = false`.
+  * Dans le cas restant (default), le casse réussit → tu t’enfuis avec l’argent.
+
+---
+
+### 5. Fin du braquage
+
+* Si `isHeistOn` est encore vrai à la fin, calcule le butin :
+
+  * `amtStolen := 10000 + rand.Intn(1000000)`
+* Affiche combien tu as volé.
+* Affiche l’état final de `isHeistOn`.
+
+---
+
+## 🔥 Bonus (facultatif)
+
+* Modifier les probabilités (par ex. 20% seulement pour passer les gardes).
+* Ajouter des conditions supplémentaires (heure du casse, nombre de complices, présence d’alarmes, etc.).
+* Créer un système de points ou de “score” selon la réussite.
+
+

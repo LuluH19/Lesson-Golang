@@ -1,0 +1,100 @@
+Parfait 🚀 je te réécris l’énoncé complet de façon claire et structurée :
+
+---
+
+# 🌌 Projet Go : Interstellar Travel Agency
+
+Bienvenue à l’**Interstellar Travel Agency**, où nous promettons de toujours “vous y emmener”.
+Dans ce projet, tu vas apprendre à écrire et utiliser des **fonctions Go** pour :
+
+* calculer du carburant,
+* gérer les voyages vers différentes planètes,
+* informer les passagers,
+* et simuler un vrai voyage interstellaire.
+
+---
+
+## 🎯 Étapes du projet
+
+### A. Créer l’agence interstellaire
+
+1. **fuelGauge(fuel int)**
+   Fonction qui affiche le carburant restant.
+
+2. **calculateFuel(planet string) int**
+   Fonction qui retourne la quantité de carburant nécessaire pour rejoindre une planète donnée.
+
+3. À l’intérieur, crée une variable `fuel` (int) à retourner à la fin.
+
+4. Utilise un `switch` ou des `if/else` pour attribuer les valeurs :
+
+   * `"Venus"` → 300000
+   * `"Mercury"` → 500000
+   * `"Mars"` → 700000
+   * autre → 0
+
+5. Retourne `fuel`.
+
+---
+
+### B. Gestion des messages
+
+6. **greetPlanet(planet string)**
+   Affiche un message de bienvenue pour la planète choisie.
+
+7. Le message doit indiquer clairement la destination.
+
+8. **cantFly()**
+   Fonction sans paramètres, sans retour.
+
+9. Elle affiche :
+   `"We do not have the available fuel to fly there."`
+
+---
+
+### C. Coordonner le vol
+
+10. **flyToPlanet(planet string, fuel int) int**
+    Fonction qui gère le voyage et retourne le carburant restant.
+
+11. Déclare deux variables : `fuelRemaining` et `fuelCost`.
+
+12. Initialise `fuelRemaining` avec `fuel`.
+
+13. Calcule `fuelCost` en appelant `calculateFuel(planet)`.
+
+14. Si `fuelRemaining >= fuelCost` :
+
+    * appelle `greetPlanet(planet)`
+    * soustrais `fuelCost` de `fuelRemaining`
+
+15. Sinon :
+
+    * appelle `cantFly()`
+
+16. Retourne `fuelRemaining`.
+
+---
+
+### D. Décollage 🚀
+
+17. Dans `main()`, crée une variable `fuel` (int).
+
+18. Affecte `fuel = 1000000`.
+
+19. Crée une variable `planetChoice` avec `"Venus"`.
+
+20. Appelle `flyToPlanet(planetChoice, fuel)` et sauvegarde le résultat dans `fuel`.
+
+21. Vérifie ton réservoir avec `fuelGauge(fuel)`.
+
+22. Bravo 🎉 tu as simulé ton premier voyage interstellaire avec Go !
+
+---
+
+## 🔥 Bonus (facultatif)
+
+* Suivre l’état du vaisseau (quelle planète est atteinte).
+* Ajouter une fonction pour revenir sur la planète d’origine.
+* Créer de nouvelles destinations avec des coûts différents.
+* Simuler plusieurs voyages d’affilée.

@@ -1,0 +1,25 @@
+### Review
+
+## Preview  
+Docs: Variables are used to store values of specific data types in memory for later use are out of scope!
+
+The following concepts were covered in this lesson:
+
+- Go is a **pass-by-value** language.  
+- An **address** is where a value is stored.  
+- To find an address of a variable, use the `&` operator before a variable.  
+- **Pointers**  
+  - are variables that store an address.  
+  - are specific to what type of address they can store.  
+- The `*` operator can be used to:  
+  - assign a pointer the type of the value its address holds,  
+  - dereference a pointer and assign a new value.  
+
+---
+
+### Instructions  
+If you want to practice more with pointers and addresses:
+
+1. Create a function that changes a **boolean** value from a different scope.  
+2. Create a function that changes a **float** value from a different scope.  
+3. Find the **zero value** of a pointer that is initialized but hasn’t been assigned a value.  

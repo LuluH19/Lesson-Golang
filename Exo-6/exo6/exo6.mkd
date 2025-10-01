@@ -1,0 +1,96 @@
+## 🏋️ Go Fitness Tracker: Implementing Interfaces
+
+### 📖 Scénario
+
+Tu es développeur chez **GoFit**, une startup qui révolutionne l’industrie du fitness avec des solutions de suivi innovantes.
+Ton objectif est de créer un **système de suivi d’entraînements flexible** capable de gérer différents types d’exercices : des séances de cardio intenses aux séances de musculation lourde.
+
+### 🔧 Ce que tu vas construire
+
+* Une **interface `Workout`** commune à tous les types d’entraînements
+* Une structure **`CardioWorkout`** pour les exercices cardio
+* Une structure **`StrengthWorkout`** pour les exercices de musculation
+* Des méthodes pour :
+
+  * Calculer les calories brûlées
+  * Enregistrer et afficher les statistiques
+* Une **fonction de résumé** capable de parcourir plusieurs entraînements (de différents types) et d’afficher leurs données
+
+Le code de départ contient déjà :
+
+* Les structs `CardioWorkout` et `StrengthWorkout`
+* Une implémentation de la méthode `.Duration()` pour chacun
+* La signature de la fonction `summarizeWorkouts()`
+
+### 🎯 Objectifs pédagogiques
+
+À travers ce projet, tu vas :
+
+* Manipuler les **interfaces en Go**
+* Implémenter des **méthodes spécifiques** selon le type d’entraînement
+* Comprendre comment utiliser des **slices d’interfaces** pour gérer plusieurs objets différents
+* Construire une application extensible et maintenable
+
+---
+
+## ✅ Liste des tâches à accomplir
+
+### Interface Definition and Implementation
+
+1. **Définir l’interface `Workout`** avec les signatures :
+
+   * `Duration() time.Duration` → retourne la durée
+   * `CaloriesBurned() float64` → retourne les calories brûlées
+   * `RecordStats()` → affiche les statistiques
+   * `GetType() string` → retourne le type d’entraînement
+
+2. **Implémenter `CaloriesBurned()` pour `CardioWorkout`** avec la formule :
+
+   ```
+   calories = durée_en_minutes * 10 * (avgHeartRate / 100)
+   ```
+
+3. **Implémenter `RecordStats()` pour `CardioWorkout`** pour afficher : durée, distance, fréquence cardiaque moyenne, calories.
+
+4. **Implémenter `GetType()` pour `CardioWorkout`** → retourne `"Cardio"`.
+
+5. **Implémenter `CaloriesBurned()` pour `StrengthWorkout`** avec la formule :
+
+   ```
+   calories = durée_en_minutes * 5 * (weight / 10)
+   ```
+
+6. **Implémenter `RecordStats()` pour `StrengthWorkout`** pour afficher : durée, poids, séries, répétitions, calories.
+
+7. **Implémenter `GetType()` pour `StrengthWorkout`** → retourne `"Strength"`.
+
+---
+
+### Workout Summary
+
+8. **Compléter `summarizeWorkouts()`** pour :
+
+   * Parcourir la slice d’entraînements
+   * Afficher pour chaque workout son type, sa durée et ses calories
+   * Appeler `.RecordStats()` après chaque résumé
+
+---
+
+### Création des instances
+
+9. **Dans `main()`**, créer une slice vide de `Workout`.
+
+10. **Ajouter un `CardioWorkout`** (ex : 30 minutes, 5 km, 150 bpm).
+
+11. **Ajouter un `StrengthWorkout`** (ex : 45 minutes, 80 kg, 4 séries × 10 reps).
+
+12. **Appeler `summarizeWorkouts()`** pour afficher le résumé des entraînements.
+
+13. **Exécuter le programme** et vérifier que tout fonctionne.
+
+---
+
+👉 Résultat attendu :
+
+* Chaque entraînement affiche un **résumé concis** + un **détail complet** via `RecordStats()`.
+* Le système est **extensible** : il sera facile d’ajouter un nouveau type d’entraînement (ex: Yoga, HIIT) en implémentant simplement l’interface `Workout`.
